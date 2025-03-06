@@ -1,0 +1,8 @@
+file_format: "1"
+id: tamago60
+name: Tamago60
+type: shield
+url: https://eggs.works/tamago60/
+requires: [pro_micro]
+features:
+  - keys
