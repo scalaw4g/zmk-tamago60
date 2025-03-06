@@ -11,12 +11,94 @@
         zmk,physical-layout = &physical_layout0;
     };
 
+    tamago60_layout: tamago60_layout {
+		compatible = "zmk,physical-layout";
+		display-name = "Default";
+		
+		transform = <&matrix_transform>;
+		
+		keys  //                     w   h    x    y     rot    rx    ry
+		    = <&key_physical_attrs 100 100    0    0       0     0     0>
+		    , <&key_physical_attrs 100 100  100    0       0     0     0>
+		    , <&key_physical_attrs 100 100  200    0       0     0     0>
+		    , <&key_physical_attrs 100 100  300    0       0     0     0>
+		    , <&key_physical_attrs 100 100  400    0       0     0     0>
+		    , <&key_physical_attrs 100 100  500    0       0     0     0>
+
+            , <&key_physical_attrs 100 100    0    100       0     0     0>
+		    , <&key_physical_attrs 100 100  100    100       0     0     0>
+		    , <&key_physical_attrs 100 100  200    100       0     0     0>
+		    , <&key_physical_attrs 100 100  300    100       0     0     0>
+		    , <&key_physical_attrs 100 100  400    100       0     0     0>
+		    , <&key_physical_attrs 100 100  500    100       0     0     0>
+		   
+            , <&key_physical_attrs 100 100    0    200       0     0     0>
+		    , <&key_physical_attrs 100 100  100    200       0     0     0>
+		    , <&key_physical_attrs 100 100  200    200       0     0     0>
+		    , <&key_physical_attrs 100 100  300    200       0     0     0>
+		    , <&key_physical_attrs 100 100  400    200       0     0     0>
+		    , <&key_physical_attrs 100 100  500    200       0     0     0>
+
+            , <&key_physical_attrs 100 100    0    300       0     0     0>
+		    , <&key_physical_attrs 100 100  100    300       0     0     0>
+		    , <&key_physical_attrs 100 100  200    300       0     0     0>
+		    , <&key_physical_attrs 100 100  300    300       0     0     0>
+		    , <&key_physical_attrs 100 100  400    300       0     0     0>
+		    , <&key_physical_attrs 100 100  500    300       0     0     0>
+
+            , <&key_physical_attrs 100 100    0    400       0     0     0>
+		    , <&key_physical_attrs 100 100  100    400       0     0     0>
+		    , <&key_physical_attrs 100 100  200    400       0     0     0>
+		    , <&key_physical_attrs 100 100  300    400       0     0     0>
+		    , <&key_physical_attrs 100 100  400    400       0     0     0>
+		    , <&key_physical_attrs 100 100  500    400       0     0     0>
+
+
+
+            , <&key_physical_attrs 100 100  800      0       0     0     0>
+		    , <&key_physical_attrs 100 100  900      0       0     0     0>
+		    , <&key_physical_attrs 100 100  1000     0       0     0     0>
+		    , <&key_physical_attrs 100 100  1100     0       0     0     0>
+		    , <&key_physical_attrs 100 100  1200     0       0     0     0>
+		    , <&key_physical_attrs 100 100  1300     0       0     0     0>
+
+            , <&key_physical_attrs 100 100  800      100       0     0     0>
+		    , <&key_physical_attrs 100 100  900      100       0     0     0>
+		    , <&key_physical_attrs 100 100  1000     100       0     0     0>
+		    , <&key_physical_attrs 100 100  1100     100       0     0     0>
+		    , <&key_physical_attrs 100 100  1200     100       0     0     0>
+		    , <&key_physical_attrs 100 100  1300     100       0     0     0>
+
+            , <&key_physical_attrs 100 100  800      200       0     0     0>
+		    , <&key_physical_attrs 100 100  900      200       0     0     0>
+		    , <&key_physical_attrs 100 100  1000     200       0     0     0>
+		    , <&key_physical_attrs 100 100  1100     200       0     0     0>
+		    , <&key_physical_attrs 100 100  1200     200       0     0     0>
+		    , <&key_physical_attrs 100 100  1300     200       0     0     0>
+
+            , <&key_physical_attrs 100 100  800      300       0     0     0>
+		    , <&key_physical_attrs 100 100  900      300       0     0     0>
+		    , <&key_physical_attrs 100 100  1000     300       0     0     0>
+		    , <&key_physical_attrs 100 100  1100     300       0     0     0>
+		    , <&key_physical_attrs 100 100  1200     300       0     0     0>
+		    , <&key_physical_attrs 100 100  1300     300       0     0     0>
+
+            , <&key_physical_attrs 100 100  800      400       0     0     0>
+		    , <&key_physical_attrs 100 100  900      400       0     0     0>
+		    , <&key_physical_attrs 100 100  1000     400       0     0     0>
+		    , <&key_physical_attrs 100 100  1100     400       0     0     0>
+		    , <&key_physical_attrs 100 100  1200     400       0     0     0>
+		    , <&key_physical_attrs 100 100  1300     400       0     0     0>
+
+		    ;
+	};
+
     kscan0: kscan_0 {
         compatible = "zmk,kscan-gpio-matrix";
         wakeup-source;
         diode-direction = "col2row";
 
-        col-gpios
+        row-gpios
             = <&pro_micro 5 GPIO_ACTIVE_HIGH> // col 0
             , <&pro_micro 6 GPIO_ACTIVE_HIGH> // col 1
             , <&pro_micro 7 GPIO_ACTIVE_HIGH> // col 2
@@ -29,7 +111,7 @@
             , <&pro_micro 10 GPIO_ACTIVE_HIGH> // col 9
             ;
 
-        row-gpios
+        col-gpios
             = <&pro_micro 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // row 0
             , <&pro_micro 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // row 1
             , <&pro_micro 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // row 2
@@ -37,5 +119,23 @@
             , <&pro_micro 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // row 4
             , <&pro_micro 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // row 5
             ;
+    };
+
+    default_transform: keymap_transform0 {
+        compatible = "zmk,matrix-transform";
+        columns = <6>; // Length of the "col-gpios" array
+        rows = <10>; // Length of the "row-gpios" array
+        map = <
+            RC(0,0) RC(0,1) RC(0,2) RC(0,3) RC(0,4) RC(0,5)
+            RC(1,0) RC(1,1) RC(1,2) RC(1,3) RC(1,4) RC(1,5)
+            RC(2,0) RC(2,1) RC(2,2) RC(2,3) RC(2,4) RC(2,5)
+            RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5)
+            RC(4,0) RC(4,1) RC(4,2) RC(4,3) RC(4,4) RC(4,5)
+            RC(5,0) RC(5,1) RC(5,2) RC(5,3) RC(5,4) RC(5,5)
+            RC(6,0) RC(6,1) RC(6,2) RC(6,3) RC(6,4) RC(6,5)
+            RC(7,0) RC(7,1) RC(7,2) RC(7,3) RC(7,4) RC(7,5)
+            RC(8,0) RC(8,1) RC(8,2) RC(8,3) RC(8,4) RC(8,5)
+            RC(9,0) RC(9,1) RC(9,2) RC(9,3) RC(9,4) RC(9,5)
+        >;
     };
 };
