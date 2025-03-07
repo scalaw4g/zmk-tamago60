@@ -89,16 +89,6 @@
             ;
     };
 
-    position_map {
-        compatible = "zmk,physical-layout-position-map";
-
-        complete;
-
-        tamago60_layout {
-            physical-layout = <&tamago60_layout>;
-            positions = <>;
-        };
-    };
 
     kscan0: kscan_0 {
         compatible = "zmk,kscan-gpio-matrix";
