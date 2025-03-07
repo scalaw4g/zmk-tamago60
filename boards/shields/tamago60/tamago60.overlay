@@ -8,7 +8,7 @@
     tamago60_layout: tamago60_layout {
         compatible = "zmk,physical-layout";
         display-name = "Default";
-        transform = <&default_transform>;
+        transform = <&matrix_transform>;
 
         zmk,kscan = &kscan0;
         zmk,physical-layout = &tamago60_layout;
@@ -127,7 +127,7 @@
             ;
     };
 
-    default_transform: default_transform {
+    matrix_transform: matrix_transform {
         compatible = "zmk,matrix-transform";
         columns = <6>; // Length of the "col-gpios" array
         rows = <10>; // Length of the "row-gpios" array
