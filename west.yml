@@ -7,7 +7,7 @@ manifest:
     # https://github.com/remote-name/repository-name
     - name: zmk-hid-io
       remote: badjeff
-      #revision: main
+      revision: main
     - name: zmk-analog-input-driver
       remote: badjeff
-      #revision: main
+      revision: main
