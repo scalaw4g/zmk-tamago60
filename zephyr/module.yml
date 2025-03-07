@@ -9,7 +9,7 @@ build:
   # Folder containing a "CMakeLists.txt" (. = root)
   cmake: .
   # Kconfig filepath
-  kconfig: .
+  kconfig: Kconfig
   settings:
     # Folder containing a "boards" folder (. = root)
     board_root: .
