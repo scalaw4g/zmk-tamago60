@@ -55,7 +55,7 @@
 /* Badjeff HID IO */
 
     /* Setup input-processor to intercept input and forward to new usage page  */
-        zip_fwd_to_hid_io: zip_fwd_to_hid_io {
+        zip_fwd_to_hid_io: zip_forward_fwd_to_hid_io {
                 compatible = "zmk,input-processor-fwd-to-hid-io";
                 #input-processor-cells = <0>;
                 usage = <HID_IO_USAGE_FWD_TO_JOYSTICK>;
