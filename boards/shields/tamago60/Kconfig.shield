@@ -2,4 +2,4 @@
 # SPDX-License-Identifier: MIT
 
 config SHIELD_TAMAGO60
-    def_bool $(shields_list_contains,naked60)
+    def_bool $(shields_list_contains,tamago60)
