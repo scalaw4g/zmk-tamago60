@@ -8,6 +8,8 @@ manifest:
     - name: zmk-hid-io
       remote: badjeff
       revision: main
+      import: Kconfig
     - name: zmk-analog-input-driver
       remote: badjeff
       revision: main
+      import: Kconfig
