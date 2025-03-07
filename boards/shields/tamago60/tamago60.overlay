@@ -6,7 +6,8 @@
 
 / {
 	chosen {
-		zmk,kscan = &kscan_0;
+		zmk,kscan = &kscan0;
+		zmk,physical-layout = &tamago60_layout;
 	};    
 
 	tamago60_layout: tamago60_layout {
@@ -90,7 +91,7 @@
     };
 
 
-    kscan0: kscan_0 {
+    kscan0: kscan0 {
         compatible = "zmk,kscan-gpio-matrix";
         wakeup-source;
         diode-direction = "col2row";
