@@ -4,7 +4,7 @@
 name: Tamago60
 build:
   # List your dependencies
-  depends: 
+  depends: zmk-hid-io zmk-analog-input-driver
 
   # Folder containing a "CMakeLists.txt" (. = root)
   cmake: .
