@@ -9,6 +9,8 @@
 #include <dt-bindings/zmk/pointing.h>
 
 #define DEF 0 // default layer
+#define LWR 1 // lower layer
+
 #define HID_IO_USAGE_FWD_TO_MOUSE 1
 #define HID_IO_USAGE_FWD_TO_JOYSTICK 2
 #define ZIP_HID_IO_USAGE_FWD_TO_VOLUME_KNOB 3
