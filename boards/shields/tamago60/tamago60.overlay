@@ -144,10 +144,10 @@
         >;
     };
 
-
+/* analog input driver from https://github.com/badjeff/zmk-analog-input-driver */
 	anin0: analog_input_0 {
 		compatible = "zmk,analog-input";
-		sampling-hz = <100>;
+		sampling-hz = <400>;
 		x-ch {
 			io-channels = <&adc 2>;
 			mv-mid = <1630>;
@@ -170,7 +170,7 @@
 			evt-type = <INPUT_EV_REL>;
 			input-code = <INPUT_REL_Y>;
 
-			/* enable report mdoe for gamepad axix or knob */
+			/* enable report mdoe for gamepad axis or knob */
 			/* to only call input_report on quantquantized value is updated */
 			report-on-change-only;
 
