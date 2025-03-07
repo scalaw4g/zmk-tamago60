@@ -5,11 +5,11 @@ manifest:
   projects:
     # Together with the above defined remote, this refers to a module located at
     # https://github.com/remote-name/repository-name
-    - name: zmk-hid-io
+    - name: zmk-analog-input-driver
       remote: badjeff
       revision: main
       import: Kconfig
-    - name: zmk-analog-input-driver
+    - name: zmk-hid-io
       remote: badjeff
       revision: main
       import: Kconfig
