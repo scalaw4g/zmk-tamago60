@@ -6,7 +6,7 @@
 
 / {
 	chosen {
-		zmk,kscan = &matrix;
+		zmk,kscan = &kscan_0;
 	};    
 
 	tamago60_layout: tamago60_layout {
