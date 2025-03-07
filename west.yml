@@ -1,7 +1,7 @@
 manifest:
   remotes:
-#    - name: badjeff
-#      url-base: https://github.com/badjeff
+    - name: badjeff
+      url-base: https://github.com/badjeff
   projects:
     # Together with the above defined remote, this refers to a module located at
     # https://github.com/remote-name/repository-name
