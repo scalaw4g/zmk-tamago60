@@ -1,6 +1,6 @@
-/*
-zmk-analog-input-driver
-*/
+#
+# zmk-analog-input-driver
+#
 
 menuconfig ANALOG_INPUT
 	bool "ANALOG_INPUT adc sensor"
@@ -41,9 +41,9 @@ source "${ZEPHYR_BASE}/subsys/logging/Kconfig.template.log_config"
 
 endif #ANALOG_INPUT
 
-/*
-zmk-hid-io
-*/
+#
+# zmk-hid-io
+#
 
 config ZMK_HID_IO
     bool "Enable HID I/O"
