@@ -6,3 +6,4 @@ url: https://eggs.works/tamago60/
 requires: [pro_micro]
 features:
   - keys
+  - joystick
