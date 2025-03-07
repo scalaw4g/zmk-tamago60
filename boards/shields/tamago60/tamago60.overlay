@@ -170,8 +170,8 @@
 			evt-type = <INPUT_EV_REL>;
 			input-code = <INPUT_REL_Y>;
 
-			/* enable report mdoe for gamepad axis or knob */
-			/* to only call input_report on quantquantized value is updated */
+			/* enable report mode for gamepad axis or knob */
+			/* to only call input_report on quantized value is updated */
 			report-on-change-only;
 
 		};
