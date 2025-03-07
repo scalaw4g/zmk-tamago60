@@ -1,1 +1,104 @@
+# Sensor data simulator
+#
+# Copyright (c) 2019 Nordic Semiconductor
+#
+# SPDX-License-Identifier: LicenseRef-Nordic-5-Clause
+#
 
+menuconfig ANALOG_INPUT
+	bool "ANALOG_INPUT adc sensor"
+  select ADC
+	help
+	  Enable ANALOG_INPUT adc sensor.
+
+if ANALOG_INPUT
+
+config ANALOG_INPUT_WORKQUEUE_PRIORITY
+    int "Workqueue priority"
+    default 10
+    help
+      Priority of thread used by the workqueue
+
+config ANALOG_INPUT_WORKQUEUE_STACK_SIZE
+    int "Workqueue stack size"
+    default 1024
+    help
+      Stack size of thread used by the workqueue
+
+config ANALOG_INPUT_REPORT_INTERVAL_MIN
+	int "ANALOG_INPUT's default minimum report rate"
+	default 0
+	help
+	  Default minimum report interval in milliseconds.
+		Slow down input reporting for hid queue over the air.
+
+config ANALOG_INPUT_LOG_DBG_RAW
+	bool "ANALOG_INPUT debug log for RAW mV"
+
+config ANALOG_INPUT_LOG_DBG_REPORT
+	bool "ANALOG_INPUT debug log for REPORT value"
+
+module = ANALOG_INPUT
+module-str = ANALOG_INPUT
+source "${ZEPHYR_BASE}/subsys/logging/Kconfig.template.log_config"
+
+endif #ANALOG_INPUT
+
+
+
+config ZMK_HID_IO
+    bool "Enable HID I/O"
+    default n
+
+config ZMK_HID_IO_MOUSE
+    bool "Enable HID I/O Mouse"
+    default n
+
+config ZMK_HID_IO_JOYSTICK
+    bool "Enable HID I/O Joystick"
+    default n
+
+config ZMK_HID_IO_OUTPUT
+    bool "Enable HID I/O Output"
+    default n
+
+config ZMK_HID_IO_VOLUME_KNOB
+    bool "Enable HID I/O Volume Knob"
+    default n
+
+config ZMK_HID_IO_BLE_JOYSTICK_REPORT_QUEUE_SIZE
+    int "Max number of mouse HID reports to queue for sending over BLE"
+    default 20
+
+config ZMK_HID_IO_BLE_MOUSE_REPORT_QUEUE_SIZE
+    int "Max number of mouse HID reports to queue for sending over BLE"
+    default 20
+
+config ZMK_HID_IO_OUTPUT_QUEUE_SIZE
+    int "Maximum number of output events to allow queueing from HID"
+    default 4
+
+config ZMK_HID_IO_BLE_VOLUME_KNOB_REPORT_QUEUE_SIZE
+    int "Max number of volume knob HID reports to queue for sending over BLE"
+    default 8
+
+DT_COMPAT_ZMK_INPUT_BEHAVIOR_FWD_TO_HID_IO := zmk,input-behavior-fwd-to-hid-io
+config ZMK_INPUT_BEHAVIOR_FWD_TO_HID_IO
+    bool
+    default $(dt_compat_enabled,$(DT_COMPAT_ZMK_INPUT_BEHAVIOR_FWD_TO_HID_IO))
+
+DT_COMPAT_ZMK_INPUT_PROCESSOR_FWD_TO_HID_IO := zmk,input-processor-fwd-to-hid-io
+config ZMK_INPUT_PROCESSOR_FWD_TO_HID_IO
+    bool
+    default $(dt_compat_enabled,$(DT_COMPAT_ZMK_INPUT_PROCESSOR_FWD_TO_HID_IO))
+
+module = ZMK_HID_IO
+module-str = ZMK_HID_IO
+source "${ZEPHYR_BASE}/subsys/logging/Kconfig.template.log_config"
+
+
+DT_COMPAT_ZMK_BEHAVIOR_HID_IO_KEY_PRESS := zmk,behavior-hid-io-key-press
+
+config ZMK_BEHAVIOR_HID_IO_KEY_PRESS
+    bool
+    default $(dt_compat_enabled,$(DT_COMPAT_ZMK_BEHAVIOR_HID_IO_KEY_PRESS))
