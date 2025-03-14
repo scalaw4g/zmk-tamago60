@@ -3,7 +3,7 @@ id: tamago60
 name: Tamago60
 type: shield
 url: https://eggs.works/tamago60/
-requires: [pro_micro]
+requires: [pro_micro][nice_nano_v2]
 features:
   - keys
   - joystick
