@@ -145,7 +145,7 @@
     };
 
 /* analog input driver from https://github.com/badjeff/zmk-analog-input-driver */
-	anin0: analog_input_0 {
+/*	anin0: analog_input_0 {
 		compatible = "zmk,analog-input";
 		sampling-hz = <400>;
 		x-ch {
@@ -176,4 +176,5 @@
 
 		};
 	};
+*/
 };
