@@ -10,11 +10,11 @@
 
 #define DEF 0 // default layer
 #define LWR 1 // lower layer
-
+/*
 #define HID_IO_USAGE_FWD_TO_MOUSE 1
 #define HID_IO_USAGE_FWD_TO_JOYSTICK 2
 #define ZIP_HID_IO_USAGE_FWD_TO_VOLUME_KNOB 3
-
+*/
 / {
     keymap {
         compatible = "zmk,keymap";
@@ -55,7 +55,7 @@
     };
 
 /* Badjeff HID IO */
-
+/*
     /* Setup input-processor to intercept input and forward to new usage page  */
         zip_fwd_to_hid_io: zip_fwd_to_hid_io {
                 compatible = "zmk,input-processor-fwd-to-hid-io";
@@ -81,4 +81,5 @@
 		device = <&hidiokp>;
                 input-processors = <&zip_fwd_to_hid_io>;
 	};
+*/
 };
