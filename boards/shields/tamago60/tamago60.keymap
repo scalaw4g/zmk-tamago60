@@ -10,11 +10,13 @@
 
 #define DEF 0 // default layer
 #define LWR 1 // lower layer
+
 /*
-#define HID_IO_USAGE_FWD_TO_MOUSE 1
-#define HID_IO_USAGE_FWD_TO_JOYSTICK 2
-#define ZIP_HID_IO_USAGE_FWD_TO_VOLUME_KNOB 3
+*#define HID_IO_USAGE_FWD_TO_MOUSE 1
+*#define HID_IO_USAGE_FWD_TO_JOYSTICK 2
+*#define ZIP_HID_IO_USAGE_FWD_TO_VOLUME_KNOB 3
 */
+
 / {
     keymap {
         compatible = "zmk,keymap";
@@ -55,31 +57,31 @@
     };
 
 /* Badjeff HID IO */
-/*
-    /* Setup input-processor to intercept input and forward to new usage page  */
-        zip_fwd_to_hid_io: zip_fwd_to_hid_io {
-                compatible = "zmk,input-processor-fwd-to-hid-io";
-                #input-processor-cells = <0>;
-                usage = <HID_IO_USAGE_FWD_TO_JOYSTICK>;
-        };
 
-        /* input listener config for mouse move mode */
-	/*analog_input_il {
-		compatible = "zmk,input-listener";
-		device = <&anin0>;
-                input-processors = <&zip_fwd_to_hid_io>;
-	};*/
-
+/* Setup input-processor to intercept input and forward to new usage page  */
+/*        zip_fwd_to_hid_io: zip_fwd_to_hid_io {
+*                compatible = "zmk,input-processor-fwd-to-hid-io";
+*                #input-processor-cells = <0>;
+*                usage = <HID_IO_USAGE_FWD_TO_JOYSTICK>;
+*        };
+*
+*        /* input listener config for mouse move mode */
+*	/*analog_input_il {
+*		compatible = "zmk,input-listener";
+*		device = <&anin0>;
+*                input-processors = <&zip_fwd_to_hid_io>;
+*	};*/
+*/
         /* Setup joystick key press behavior and listener */
         /* listerer shall forward to JOYSTICK usage page if CONFIG_ZMK_HID_IO_JOYSTICK enabling */
-        hidiokp: hid_io_key_press {
-            compatible = "zmk,behavior-hid-io-key-press";
-            #binding-cells = <1>;
-        };
-	hidiokp_ibl {
-		compatible = "zmk,input-behavior-listener";
-		device = <&hidiokp>;
-                input-processors = <&zip_fwd_to_hid_io>;
-	};
+/*        hidiokp: hid_io_key_press {
+*            compatible = "zmk,behavior-hid-io-key-press";
+*            #binding-cells = <1>;
+*        };
+*	hidiokp_ibl {
+*		compatible = "zmk,input-behavior-listener";
+*		device = <&hidiokp>;
+*                input-processors = <&zip_fwd_to_hid_io>;
+*	};
 */
 };
